@@ -1,5 +1,4 @@
 # Eloquent Hashids for Laravel 5.x
-[![Latest Stable Version](https://poser.pugx.org/matt-daneshvar/eloquent-hashids/v/stable)](https://packagist.org/packages/matt-daneshvar/eloquent-hashids)
 [![Build Status](https://travis-ci.org/matt-daneshvar/eloquent-hashids.svg?branch=master)](https://travis-ci.org/matt-daneshvar/eloquent-hashids)
 ![GitHub](https://img.shields.io/github/license/matt-daneshvar/eloquent-hashids.svg)
 
