@@ -3,9 +3,9 @@
 namespace MattDaneshvar\Hashids\Tests;
 
 use Hashids\Hashids;
+use Orchestra\Testbench\TestCase;
 use Illuminate\Database\Eloquent\Model;
 use MattDaneshvar\EloquentHashids\Hashid;
-use Orchestra\Testbench\TestCase;
 
 class HashidGenerationTest extends TestCase
 {
@@ -16,7 +16,7 @@ class HashidGenerationTest extends TestCase
     {
         parent::setUp();
 
-        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
     }
 
     /**
@@ -45,8 +45,7 @@ class HashidGenerationTest extends TestCase
     /** @test */
     public function it_persists_a_hashid_to_newly_created_models()
     {
-        $model = new class extends Model
-        {
+        $model = new class extends Model {
             use Hashid;
 
             protected $table = 'test_models';
@@ -62,8 +61,7 @@ class HashidGenerationTest extends TestCase
     /** @test */
     public function it_respects_the_specified_hashid_column()
     {
-        $model = new class extends Model
-        {
+        $model = new class extends Model {
             use Hashid;
 
             protected $table = 'test_models';
@@ -81,8 +79,7 @@ class HashidGenerationTest extends TestCase
     /** @test */
     public function it_respects_the_specified_hashid_minlength()
     {
-        $model = new class extends Model
-        {
+        $model = new class extends Model {
             use Hashid;
 
             protected $table = 'test_models';
@@ -98,8 +95,7 @@ class HashidGenerationTest extends TestCase
     /** @test */
     public function it_respects_the_specified_hashid_chars()
     {
-        $model = new class extends Model
-        {
+        $model = new class extends Model {
             use Hashid;
 
             protected $table = 'test_models';
@@ -117,8 +113,7 @@ class HashidGenerationTest extends TestCase
     /** @test */
     public function it_respects_the_specified_hashid_salt()
     {
-        $model = new class extends Model
-        {
+        $model = new class extends Model {
             use Hashid;
 
             protected $table = 'test_models';
@@ -136,8 +131,7 @@ class HashidGenerationTest extends TestCase
     /** @test */
     public function it_respects_the_specified_hashid_key()
     {
-        $model = new class extends Model
-        {
+        $model = new class extends Model {
             use Hashid;
 
             protected $table = 'test_models';
@@ -156,8 +150,7 @@ class HashidGenerationTest extends TestCase
     /** @test */
     public function it_respects_the_specified_hashid_instance()
     {
-        $model = new class extends Model
-        {
+        $model = new class extends Model {
             use Hashid;
 
             protected $table = 'test_models';
@@ -177,5 +170,3 @@ class HashidGenerationTest extends TestCase
         $this->assertEquals($hashids->encode(1), $model->hashid);
     }
 }
-
-

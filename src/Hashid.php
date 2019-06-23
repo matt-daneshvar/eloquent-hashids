@@ -8,7 +8,7 @@ trait Hashid
 {
     /**
      * You may override the default behaviour of this trait by
-     * specifying any of the static properties listed below:
+     * specifying any of the static properties listed below:.
      *
      * protected static $hashidColumn = 'hashid';
      * protected static $hashidMinLength = 8;
@@ -19,15 +19,15 @@ trait Hashid
 
     /**
      * Hashids instance.
-     * 
+     *
      * @var \Hashids\Hashids
      */
     protected static $hashidsInstance;
-    
+
     /**
      * Default Hashids instance.
      * Used when $hashidInstance no present.
-     * 
+     *
      * @var \Hashids\Hashids
      */
     protected static $defaultHashidsInstance;
@@ -59,7 +59,7 @@ trait Hashid
      */
     public function generateHashId()
     {
-        $key = isset(static::$hashidKey) ? $this->{static::$hashidKey} :$this->id;
+        $key = isset(static::$hashidKey) ? $this->{static::$hashidKey} : $this->id;
         $this->{static::$hashidColumn ?? static::$defaultHashidColumn} = static::getHashIdInstance()->encode($key);
         $this->save();
     }
@@ -84,7 +84,7 @@ trait Hashid
 
     /**
      * Find model by hashid.
-     * 
+     *
      * @param $hashid
      * @return mixed
      */

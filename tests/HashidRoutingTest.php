@@ -2,9 +2,9 @@
 
 namespace MattDaneshvar\Hashids\Tests;
 
-use Illuminate\Routing\Middleware\SubstituteBindings;
-use Illuminate\Support\Facades\Route;
 use Orchestra\Testbench\TestCase;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Routing\Middleware\SubstituteBindings;
 
 class HashidRoutingTest extends TestCase
 {
@@ -15,7 +15,7 @@ class HashidRoutingTest extends TestCase
     {
         parent::setUp();
 
-        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
 
         $this->withMiddleware(SubstituteBindings::class);
     }
@@ -25,7 +25,7 @@ class HashidRoutingTest extends TestCase
     {
         $model = new \TestModel();
 
-        Route::get('test_models/{model}', function(\TestModel $model){
+        Route::get('test_models/{model}', function (\TestModel $model) {
             return "You're viewing test model #{$model->id}.";
         })->middleware(SubstituteBindings::class);
 
@@ -34,5 +34,3 @@ class HashidRoutingTest extends TestCase
         $this->get("test_models/{$model->hashid}")->assertStatus(200);
     }
 }
-
-
