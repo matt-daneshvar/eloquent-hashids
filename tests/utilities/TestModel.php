@@ -2,11 +2,11 @@
 
 use Illuminate\Database\Eloquent\Model;
 use MattDaneshvar\EloquentHashids\Hashid;
-use MattDaneshvar\EloquentHashids\HashidRouteKeyName;
+use MattDaneshvar\EloquentHashids\HashidRouting;
 
 class TestModel extends Model
 {
-    use Hashid, HashidRouteKeyName;
+    use Hashid, HashidRouting;
 
     protected $table = 'test_models';
 }

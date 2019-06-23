@@ -2,7 +2,7 @@
 
 namespace MattDaneshvar\EloquentHashids;
 
-trait HashidRouteKeyName
+trait HashidRouting
 {
     /**
      * Change model's route key name to the hash_id column.
@@ -11,6 +11,6 @@ trait HashidRouteKeyName
      */
     public function getRouteKeyName()
     {
-        return 'hashid';
+        return static::$hashidColumn ?? static::$defaultHashidColumn;
     }
 }
