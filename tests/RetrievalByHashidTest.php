@@ -2,10 +2,10 @@
 
 namespace MattDaneshvar\Hashids\Tests;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
-use MattDaneshvar\EloquentHashids\Hashid;
 use Orchestra\Testbench\TestCase;
+use Illuminate\Database\Eloquent\Model;
+use MattDaneshvar\EloquentHashids\Hashid;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class RetrievalByHashidTest extends TestCase
 {
@@ -16,14 +16,13 @@ class RetrievalByHashidTest extends TestCase
     {
         parent::setUp();
 
-        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
     }
 
     /** @test */
     public function it_can_find_the_model_by_its_hashid()
     {
-        $model = new class extends Model
-        {
+        $model = new class extends Model {
             use Hashid;
 
             protected $table = 'test_models';
@@ -32,7 +31,7 @@ class RetrievalByHashidTest extends TestCase
         $model->save();
 
         $result = $model->findByHashid($model->hashid);
-        
+
         $this->assertNotNull($result);
 
         $this->assertEquals($model->id, $result->id);
@@ -41,8 +40,7 @@ class RetrievalByHashidTest extends TestCase
     /** @test */
     public function it_can_find_the_model_by_its_hashid_with_custom_column()
     {
-        $model = new class extends Model
-        {
+        $model = new class extends Model {
             use Hashid;
 
             protected $table = 'test_models';
@@ -62,8 +60,7 @@ class RetrievalByHashidTest extends TestCase
     /** @test */
     public function it_fails_if_no_model_matches_the_specified_hashid()
     {
-        $model = new class extends Model
-        {
+        $model = new class extends Model {
             use Hashid;
 
             protected $table = 'test_models';
@@ -72,9 +69,7 @@ class RetrievalByHashidTest extends TestCase
         $model->save();
 
         $this->expectException(ModelNotFoundException::class);
-        
+
         $model->findByHashidOrFail('random string');
     }
 }
-
-
