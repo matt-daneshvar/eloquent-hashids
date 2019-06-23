@@ -43,35 +43,35 @@ class Receipt extends Model
     use Hashid;
     
     /**
-     * The column used to store hashid.
+     * The column used to store Hashid.
      *
      * @var array
      */
     protected static $hashidColumn = 'hashid';
     
     /**
-     * The minimum length of the generated hashids.
+     * The minimum length of the generated Hashids.
      *
      * @var array
      */
     protected static $hashidMinLength = 8;
     
     /**
-     * The whitelist of characters used inside the generated hashids.
+     * The whitelist of characters used inside the generated Hashids.
      *
      * @var array
      */
     protected static $hashidChars = 'abcdefghijklmnopqrstuvwxyz1234567890';
     
     /**
-     * The salt for generating hashids.
+     * The salt for generating Hashids.
      *
      * @var array
      */
     protected static $hashidSalt = 'your unique salt';
     
     /**
-     * The attribute encoded to generate the hashid.
+     * The attribute encoded to generate the Hashid.
      *
      * @var array
      */
