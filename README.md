@@ -1,8 +1,9 @@
 # Eloquent Hashids for Laravel 5.x
+![Packagist Version](https://img.shields.io/packagist/v/matt-daneshvar/eloquent-hashids.svg)
 [![Build Status](https://travis-ci.org/matt-daneshvar/eloquent-hashids.svg?branch=master)](https://travis-ci.org/matt-daneshvar/eloquent-hashids)
 ![GitHub](https://img.shields.io/github/license/matt-daneshvar/eloquent-hashids.svg)
 
-Automatically persist a Hashid on your newly created Eloquent models 
+Automatically persist Hashids on your newly created Eloquent models 
 using Ivan Akimov's [Hashids library](https://github.com/ivanakimov/hashids.php).
 
 This can be useful when you need to generate a unique alphanumeric (or any character) combinations 
