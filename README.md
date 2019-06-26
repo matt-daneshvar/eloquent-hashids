@@ -5,12 +5,12 @@
 Automatically persist Hashids on your newly created Eloquent models 
 using Ivan Akimov's [Hashids library](https://github.com/ivanakimov/hashids.php).
 
-This can be useful when you need to generate a unique alphanumeric (or any character) combinations 
+This can be useful when you need to generate a unique alphanumeric (or any other character) combinations 
 to represent your models.
 
 ## Installation
 
-Require the package using composer:
+Require the package using composer.
 
 ```bash
 composer require matt-daneshvar/eloquent-hashids
@@ -77,6 +77,31 @@ class Receipt extends Model
     protected static $hashidKey = 'id';
 }
 ```
+
+### Changing the Hashid column
+To customize the hashid column, set your own custom `$hashidColumn` value on your model.
+```php
+class Receipt extends Model
+{
+    use Hashid;
+    
+    protected static $hashidColumn = 'uid';
+}
+```
+
+### Changing the salt
+Each model's table name is by default used as the salt for generating Hashids.
+With that, models of separate classes that share the same IDs 
+(e.g. a `Task` model with ID of 1 and a `Receipt` model also with ID of 1) would each have different Hashids.
+You may change this behaviour and override the salt by specifying the `$hashidSlat` on your model.
+ ```php
+ class Receipt extends Model
+ {
+     use Hashid;
+     
+     protected static $hashidSalt = 'salt and pepper';
+ }
+ ```
 
 ### Creating your own Hashids instance
 To fully customize the behaviour of the underlying Hashids library, 
