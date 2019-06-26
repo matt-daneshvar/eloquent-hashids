@@ -27,6 +27,10 @@ Optionally use `HashidRouting` to set your model to use the `hashid` column for
 Laravel's [Route Model Binding](https://laravel.com/docs/routing#route-model-binding). 
 
 ```php
+use Illuminate\Database\Eloquent\Model;
+use MattDaneshvar\EloquentHashids\Hashid;
+use MattDaneshvar\EloquentHashids\HashidRouting;
+
 class Receipt extends Model
 {
     use Hashid, HashidRouting;
