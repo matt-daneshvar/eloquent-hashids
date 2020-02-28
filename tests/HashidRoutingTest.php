@@ -2,9 +2,9 @@
 
 namespace MattDaneshvar\Hashids\Tests;
 
-use Orchestra\Testbench\TestCase;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Routing\Middleware\SubstituteBindings;
+use Illuminate\Support\Facades\Route;
+use Orchestra\Testbench\TestCase;
 
 class HashidRoutingTest extends TestCase
 {

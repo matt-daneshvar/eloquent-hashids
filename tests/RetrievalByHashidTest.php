@@ -2,10 +2,10 @@
 
 namespace MattDaneshvar\Hashids\Tests;
 
-use Orchestra\Testbench\TestCase;
 use Illuminate\Database\Eloquent\Model;
-use MattDaneshvar\EloquentHashids\Hashid;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use MattDaneshvar\EloquentHashids\Hashid;
+use Orchestra\Testbench\TestCase;
 
 class RetrievalByHashidTest extends TestCase
 {
