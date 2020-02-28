@@ -3,9 +3,9 @@
 namespace MattDaneshvar\Hashids\Tests;
 
 use Hashids\Hashids;
-use Orchestra\Testbench\TestCase;
 use Illuminate\Database\Eloquent\Model;
 use MattDaneshvar\EloquentHashids\Hashid;
+use Orchestra\Testbench\TestCase;
 
 class HashidGenerationTest extends TestCase
 {
