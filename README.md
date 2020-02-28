@@ -5,7 +5,7 @@
 Automatically persist Hashids on your newly created Eloquent models 
 using Ivan Akimov's [Hashids library](https://github.com/ivanakimov/hashids.php).
 
-This can be useful when you need to generate a unique alphanumeric (or any other character) combinations 
+This can be useful when you need to generate unique alphanumeric (or any other character) combinations 
 to represent your models.
 
 ## Installation
