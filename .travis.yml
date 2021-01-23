@@ -8,9 +8,8 @@ env:
   matrix:
     - COMPOSER_FLAGS="--prefer-lowest"
     - COMPOSER_FLAGS=""
-
-env: 
-  - XDEBUG_MODE=coverage
+  global:
+  - XDEBUG_MODE="coverage"
 
 before_script:
   - travis_retry composer update ${COMPOSER_FLAGS}
